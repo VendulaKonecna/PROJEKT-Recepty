@@ -33,3 +33,26 @@ Nastav je receptům jako obrázky na pozadí (tj. nepřidávej je jako <img> do 
 Na rozložení prvků NEPOUŽÍVEJ absolutní pozicování, ale pouze flexboxy.
 Flexboxy mohou být vnořené do sebe, klidně několikrát.
 */
+
+*{
+	margin: 0;
+	padding: 0;
+}
+.main{
+	background-image: url(images/salat.jpg)
+}
+.small_1{
+	background-image: url(images/chlebicek.jpg);
+}
+.small_2{
+	background-image: url(images/tacos.jpg);
+}
+.small_3{
+	background-image: url(images/cizrna.jpg);
+}
+.small_4{
+	background-image: url(images/burger.jpg);
+}
+.recipe{
+	background-size: cover;
+}
