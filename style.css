@@ -34,25 +34,145 @@ Na rozložení prvků NEPOUŽÍVEJ absolutní pozicování, ale pouze flexboxy.
 Flexboxy mohou být vnořené do sebe, klidně několikrát.
 */
 
-*{
+.main-recipe{
+	min-height: 200px;
+	border-bottom:  1px solid white;
+}
+.small{
+	min-height: 90px;
+	border-bottom: 1px solid white;
+}
+
+@media screen and (min-width: 480px) {
+	.main-recipe{
+		min-height: 250px;
+	}
+	.recipes{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.recept:nth-child(2n+1){
+		border-right: 1px solid white;
+	}
+	.small{
+		flex: 0 0 50%;
+		min-height: 150px;
+	}
+}
+
+@media screen and (min-width: 860px) {
+	.popular{
+		display: flex;
+	}
+	.main-recipe{
+		flex: 1 0 calc(100 / 3);
+		border-right: 1px solid white;
+	}
+	.recipes{
+		flex: 1 0 66.66%;
+	}
+	.small{
+		min-height: 200px;
+	}
+}
+
+.main-recipe,
+.small{
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.recept-meta{
+	display: flex;
+	justify-content: space-between;
+}
+
+@media screen and (min-width: 480px) {
+	.main-recipe,
+	.small{
+		padding: 20px;
+	}
+}
+
+.name{
+	font-family: 'Raleway', sans-serif;
 	margin: 0;
-	padding: 0;
+	font-weight: 800;
+	color: white;
+	text-shadow: 0 2px 2px #21212109;
 }
-.main{
-	background-image: url(images/salat.jpg)
+.recept-meta{
+	font-size: 14px;
+	font-weight: 400;
+	color: white;
 }
-.small_1{
-	background-image: url(images/chlebicek.jpg);
+.main-recipe .name{
+	font-size: 28px;
 }
-.small_2{
-	background-image: url(images/tacos.jpg);
+.small .name{
+	font-size: 22px;
 }
-.small_3{
-	background-image: url(images/cizrna.jpg);
+
+@media screen and (min-width: 860px) {
+	.main-recipe .name{
+		font-size: 48px;
+	}
+	.small .name{
+		font-size: 28px;
+	}
 }
-.small_4{
-	background-image: url(images/burger.jpg);
-}
-.recipe{
+
+.main-recipe,
+.small{
+	background-position: center center;
+	background-repeat: no-repeat;
 	background-size: cover;
 }
+.main-recipe{
+	background-image:
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('images/salat.jpg');
+}
+.main-recipe:hover{
+	background-image: url('images/salat.jpg');
+}
+.recipe1 {
+	background-image:
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('images/chlebicek.jpg');
+}
+.recipe1:hover {
+	background-image:
+		url('images/chlebicek.jpg');
+}
+.recipe2 {
+	background-image:
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('images/tacos.jpg');
+}
+.recipe2:hover {
+	background-image:
+		url('images/tacos.jpg');
+}
+
+.recipe3 {
+	background-image:
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('images/cizrna.jpg');
+}
+.recipe3:hover {
+	background-image:
+		url('images/cizrna.jpg');
+}
+
+.recipe4 {
+	background-image:
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+		url('images/burger.jpg');
+}
+.recipe4:hover {
+	background-image:
+		url('images/burger.jpg');
+}
+
